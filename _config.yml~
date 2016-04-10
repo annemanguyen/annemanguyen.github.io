@@ -1,7 +1,7 @@
 # General
 name: data science social
-description: data projects, data thoughts
-url: http://amn34.github.io
+description: "Minimalistic, friendly, responsive."
+url: http://localhost:4000
 
 markdown: kramdown
 highlighter: rouge
@@ -10,10 +10,10 @@ paginate: 5
 permalink: /:title
 
 # Social share and comments.
-disqus-id: 
-twitter: 
-github: github.com/amn34
-google: 
+disqus-id: yourusername
+twitter: yourusername
+github: yourusername
+google: +yourusername
 
 # RSS feed
 rss-feed-limit: 10
