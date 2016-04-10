@@ -11,9 +11,9 @@ permalink: /:title
 
 # Social share and comments.
 disqus-id: 
-twitter: 
+mail: anne.ma.nguyen@gmail.com
 github: github.com/amn34
-google: 
+linked in: linkedin.com/in/annemanguyen 
 
 # RSS feed
 rss-feed-limit: 10
