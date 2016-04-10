@@ -3,8 +3,8 @@ layout: default
 ---
 <div class="main-content">
     <article class="module color-3">
-            <h1>About me</h1>
+            <h1>Contact</h1>
             <hr>
-            <p>Hi! I am a recovering academic and furniture builder.</p>
+            <p>Contact info.</p>
     </article>
 </div>
