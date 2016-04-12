@@ -74,5 +74,5 @@ Furthermore, a tech worker may also be in the high-income group -- in fact, it's
 
 Demographic groups may also overlap not only substantively but geographically. In fact, this is the ideal: a station with high traffic, of which much is high-income and tech-interested, would be the best choice for street team deployment. Overlap is not a problem if the strategy is non-exclusive.
 
-#### Next: [Data](amn34.github.io/turnstylin-2)
+#### Next: [Data](/turnstylin-2)
 
