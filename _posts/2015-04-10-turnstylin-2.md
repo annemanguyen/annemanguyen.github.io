@@ -4,10 +4,9 @@ title: "Turnstylin' and Profilin' II: Data"
 date: 2015-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
-excerpt: "
-#### Cleaning the data
+excerpt: "Cleaning the Data:
 
-The basics: MTA data (available [here](http://web.mta.info/developers/turnstile.html)) is a set of weekly tables. Entries and exits are given as running totals for each turnstile in a station at 4-hour intervals. (For the most part; see below.)"
+The basics: MTA data is a set of weekly tables. Entries and exits are given as running totals for each turnstile in a station at 4-hour intervals. (For the most part; see below.)"
 ---
 
 #### Cleaning the data
@@ -28,16 +27,18 @@ So, grouping these three IDs (C/A, UNIT, SCP) together will give you an exact de
 LINENAME is particularly important, as it's the easiest way to distinguish stations with the same name. There are four stations named "23ST," for example (and they are all called 23rd St on their respective lines), but if you care about geographic location, you need to group by line. The 23rd St. ACE station is on 8th Avenue, for example, and it's 0.7 miles away from the 23rd St. 456 on Park Ave.
 
 DIVISION is sort of an artifact of old subway operation. DATE and TIME are self-explanatory, and again(!) it's important to remember that ENTRIES and EXITS are running totals, so you have to subtract the count from 00:00 from the count from 00:04 to get how many people actually passed through that turnstile in that four-hour period. I don't actually know when the running count starts - from the beginning of data collection? I don't think it resets per year, for example, since this line shows that 5.5 million people have passed through this one turnstile as of midnight on 3/26/15.
+
 ___
 
 As frustrated data scientists all over the internet will attest, this somewhat confusingly structured and prone to errors. 
-    - Variation in measurement intervals: 
-        - random spotchecks, resulting in an additional/replacement measurement at 08:00, 12:00, 14:34, 16:00, etc. 
-        - intervals are not always in four-hour increments, and they may start at different times, e.g. 07:00, 11:00, etc.
-    - Straight-up miscoding: 
-        - seriously large numbers that appear to be two counts pasted together: if 00:00 is 54321, 04:00 is 5432155321.
-        - negative counts, both independently and between intervals, e.g. 04:00 shows a lower cumulative total than 00:00 (I still don't know how to explain this one)
-        - 0 counts or missing data for turnstiles that are not open for some period
+
+- Variation in measurement intervals: 
+    - random spotchecks, resulting in an additional/replacement measurement at 08:00, 12:00, 14:34, 16:00, etc. 
+    - intervals are not always in four-hour increments, and they may start at different times, e.g. 07:00, 11:00, etc.
+- Straight-up miscoding: 
+    - seriously large numbers that appear to be two counts pasted together: if 00:00 is 54321, 04:00 is 5432155321.
+    - negative counts, both independently and between intervals, e.g. 04:00 shows a lower cumulative total than 00:00 (I still don't know how to explain this one)
+    - 0 counts or missing data for turnstiles that are not open for some period
 
 It could be problematic to simply recode the interval times, so I would suggest grouping them such that both 08:00-12:00 and 07:00-11:00 are AM entrances, etc. Of course this gets tricky with an interval like 10:00-02:00 - is that morning or afternoon? Obviously, outliers and obvious errors should be dropped. Make sure to differentiate between stations with the same name!
 
@@ -70,10 +71,9 @@ We should also note that several of these stations (as well as other selected st
 
 Defining tech hubs is a bit fuzzier. Looking at startup density maps like the one found at (https://digital.nyc/map) doesn't show a clear visual pattern. Instead, I used conventional wisdom/real estate definitions as propagated in the media, both official (e.g. Mayor's Office materials) and unofficial (newsmedia). These commonly refer to two NYC areas, Silicon Alley, around the Flatiron Building in Manhattan, and the Brooklyn Tech Triangle, in DUMBO. I selected stations that fell within these boundaries.
 
-Here's the list:
+Here are the lists:
 
 |Silicon Alley 
-|*---| ---
 | 14TH STREET (23 line) 
 | 14 ST-UNION SQ 
 | 18 ST 
@@ -84,9 +84,8 @@ Here's the list:
 | 28 ST-BROADWAY
 | 33 ST
 | 34 ST-HERALD SQ
-|---
-| **Brooklyn Tech Triangle**
-| ---
+
+|Brooklyn Tech Triangle
 | HIGH ST
 | CLARK ST
 | BOROUGH HALL/CT
@@ -169,5 +168,5 @@ Here's a map and a list of day of the highest traffic at each station:
 
 As you can see, there is a pretty sharp drop-off between the fourth busiest station and the fifth, so that might be a natural cutoff point for choosing university station targets.
 
-#### Next: [Analysis](https://amn34.github.io/turnstylin-3)
+#### Next: [Analysis](amn34.github.io/turnstylin-3)
 

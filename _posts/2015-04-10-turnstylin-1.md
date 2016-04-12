@@ -6,16 +6,14 @@ categories: [Metis, MTA]
 tags: Metis, MTA
 excerpt: "Excuse me, do you have a minute for women in tech?
 
-#### The problem
-
-A women-in-tech nonprofit wants to improve their outreach strategy. They have an annual gala coming up, and they want to raise awareness and collect signatures from folks who might attend the gala or contribute to their organization by placing street teams at subway entrances."
+The problem: A women-in-tech nonprofit wants to improve their outreach strategy. They have an annual gala coming up, and they want to raise awareness and collect signatures from folks who might attend the gala or contribute to their organization by placing street teams at subway entrances."
 ---
 
 #### The problem
 
 A women-in-tech nonprofit wants to improve their outreach strategy. They have an annual gala coming up, and they want to raise awareness and collect signatures from folks who might attend the gala or contribute to their organization by placing street teams at subway entrances.
 
-<small>A minor underlying problem: I'm sympathetic to women-in-tech issues, as a newly inducted member of that vaunted demographic, but I'm also sympathetic to commuters-avoiding-canvassers. Resolving moral conundrums is left as an exercise for the reader. </small>
+<small>A minor underlying problem: I'm sympathetic to women-in-tech issues, as a newly inducted member of that vaunted demographic, but I'm also sympathetic to commuters-avoiding-canvassers. Resolving moral conundrums is left as an exercise for the reader.</small>
 
 #### Defining an approach to the data
 
@@ -62,7 +60,7 @@ There are also behavioral assumptions at play. All else equal, this approach ass
 
 ##### Questioning assumptions
 
-Obviously, these are subject to interrogation. The point of this project, however, is to demonstrate how such assumptions drive data selection. Any other theories about best target populations (ideally client-defined) can be applied. For instance, some research suggests a U-shaped relationship between income and donation (as a percentage of income).[^1] [^1]:http://nccs.urban.org/nccs/statistics/charitable-giving-in-america-some-facts-and-figures.cfm 
+Obviously, these are subject to interrogation. The point of this project, however, is to demonstrate how such assumptions drive data selection. Any other theories about best target populations (ideally client-defined) can be applied. For instance, some research suggests a U-shaped relationship between income and donation (as a percentage of income). For example: [Charitable Giving in America](http://nccs.urban.org/nccs/statistics/charitable-giving-in-america-some-facts-and-figures.cfm)
 
 Accordingly, we might instead choose the set of stations falling in areas where the residential median income is under $100k, or even betwen $45-50k for a whopping 4% of income donated. We would also want the top end of that distribution, selecting households that report income of $2m or higher, but that is not captured in census figures. We might instead use other sources of data to identify that group: known high-level donors, Forbes, etc. Of course, at that point, a subway street team approach is no longer relevant.
 
@@ -78,5 +76,5 @@ Furthermore, a tech worker may also be in the high-income group -- in fact, it's
 
 Demographic groups may also overlap not only substantively but geographically. In fact, this is the ideal: a station with high traffic, of which much is high-income and tech-interested, would be the best choice for street team deployment. Overlap is not a problem if the strategy is non-exclusive.
 
-#### Next: [Data](https://amn34.github.io/turnstylin-2)
+#### Next: [Data](amn34.github.io/turnstylin-2)
 
