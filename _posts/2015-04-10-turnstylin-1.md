@@ -4,7 +4,11 @@ title: "Turnstylin' and Profilin' I: Theory"
 date: 2015-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
-excerpt: "You know those canvassers who stand in front of subway entrances asking if you 'have a minute'? Well..."
+excerpt: "Excuse me, do you have a minute for women in tech?
+
+#### The problem
+
+A women-in-tech nonprofit wants to improve their outreach strategy. They have an annual gala coming up, and they want to raise awareness and collect signatures from folks who might attend the gala or contribute to their organization by placing street teams at subway entrances."
 ---
 
 #### The problem
@@ -26,6 +30,7 @@ Obviously, we should start with the organization's givens.
 ![goals to strategies](/assets/goalsstrategies.jpg)
 
 In this case, the organization has two stated objectives:
+
 1. raise general awareness
 2. reach potential donors and participants
 
