@@ -4,10 +4,7 @@ title: "Turnstylin' and Profilin' II: Data"
 date: 2015-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
-excerpt: "
-#### Cleaning the data
-
-The basics: MTA data (available [here](http://web.mta.info/developers/turnstile.html)) is a set of weekly tables. Entries and exits are given as running totals for each turnstile in a station at 4-hour intervals. (For the most part; see below.)"
+excerpt: "Cleaning the data: MTA data is a set of weekly tables. Entries and exits are given as running totals for each turnstile in a station at 4-hour intervals. (For the most part; see below.)"
 ---
 
 #### Cleaning the data

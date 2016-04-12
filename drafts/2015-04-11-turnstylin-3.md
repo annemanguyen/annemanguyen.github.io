@@ -4,7 +4,7 @@ title: "Turnstylin' and Profilin' III: Analysis"
 date: 2015-04-12 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
-excerpt: "Results, comparisons, caveats"
+excerpt: "Results, comparisons, and caveats for outreach strategies based on MTA data"
 ---
 
 #### Results
