@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Turnstylin' and profilin' I: Theory"
+title: "Turnstylin' and Profilin' I: Theory"
 date: 2015-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
+excerpt: "You know those canvassers who stand in front of subway entrances asking if you 'have a minute'? Well..."
 ---
 
 #### The problem
@@ -56,7 +57,7 @@ There are also behavioral assumptions at play. All else equal, this approach ass
 
 ##### Questioning assumptions
 
-Obviously, these are subject to interrogation. The point of this project, however, is to demonstrate how such assumptions drive data selection. Any other theories about best target populations (ideally client-defined) can be applied. For instance, some research suggests a U-shaped relationship between income and donation (as a percentage of income).<sup>[1]</sup> [1]:http://nccs.urban.org/nccs/statistics/charitable-giving-in-america-some-facts-and-figures.cfm 
+Obviously, these are subject to interrogation. The point of this project, however, is to demonstrate how such assumptions drive data selection. Any other theories about best target populations (ideally client-defined) can be applied. For instance, some research suggests a U-shaped relationship between income and donation (as a percentage of income).[^1] [^1]:http://nccs.urban.org/nccs/statistics/charitable-giving-in-america-some-facts-and-figures.cfm 
 
 Accordingly, we might instead choose the set of stations falling in areas where the residential median income is under $100k, or even betwen $45-50k for a whopping 4% of income donated. We would also want the top end of that distribution, selecting households that report income of $2m or higher, but that is not captured in census figures. We might instead use other sources of data to identify that group: known high-level donors, Forbes, etc. Of course, at that point, a subway street team approach is no longer relevant.
 
@@ -71,4 +72,6 @@ It's important to note that though the demographic groups we identifed are theor
 Furthermore, a tech worker may also be in the high-income group -- in fact, it's relatively likely. This is a concern if the rate of overlap is high enough that outreach efforts become redundant. 
 
 Demographic groups may also overlap not only substantively but geographically. In fact, this is the ideal: a station with high traffic, of which much is high-income and tech-interested, would be the best choice for street team deployment. Overlap is not a problem if the strategy is non-exclusive.
+
+#### Next: [Data](https://amn34.github.io/turnstylin-2)
 

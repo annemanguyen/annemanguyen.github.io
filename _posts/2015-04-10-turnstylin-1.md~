@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Turnstylin' and profilin' I: Theory"
+title: "Turnstylin' and Profilin' I: Theory"
 date: 2015-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
+excerpt: "You know those canvassers who stand in front of subway entrances asking if you 'have a minute'? Well..."
 ---
 
 #### The problem
@@ -70,21 +71,5 @@ It's important to note that though the demographic groups we identifed are theor
 
 Furthermore, a tech worker may also be in the high-income group -- in fact, it's relatively likely. This is a concern if the rate of overlap is high enough that outreach efforts become redundant. 
 
-Demographic groups may also overlap not only substantively but geographically. In fact, this is the ideal: a station with high traffic, of which much is high-income and tech-interested, would be the best choice for street team deployment. Overlap is not a problem if the strategy is non-exlcusive.
-
-#### Cleaning the data
-
-As frustrated data scientists all over the internet will attest, the MTA data (available [here](http://web.mta.info/developers/turnstile.html)) is somewhat confusingly structured and prone to errors.
-
-#### Next steps
-- robustness checks
-#### Real-world issues
-- implementation
-- making tools
-#### Results
-####
-
-fuzziness of boundaries
-
-high income people in CT, high income people who don't use the subway
+Demographic groups may also overlap not only substantively but geographically. In fact, this is the ideal: a station with high traffic, of which much is high-income and tech-interested, would be the best choice for street team deployment. Overlap is not a problem if the strategy is non-exclusive.
 

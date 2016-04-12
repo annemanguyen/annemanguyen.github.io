@@ -151,7 +151,7 @@ Looking at the data, outliers were either negative or at least an order of magni
 
 ##### University findings
 
-Again, the strategy for this nonprofit assumes that all stations near universities should be targeted due to the higher proportion of people in our demographic of interest using them. (This, of course, assumes that that likelihood is constant across university/station locations, which is probably not true.) Therefore, within the set of university stations, we want to find which stations have the highest traffic (measured by total entries and exits), and when that traffic passes through. 
+Again, the strategy for this nonprofit assumes that all stations near universities should be targeted due to the higher proportion of demographics of interest. Therefore, within the set of university stations, we want to find which stations have the highest traffic (measured by total entries and exits), and when that traffic passes through. 
 
 This should allow the organization to say, we want to capture universities, but given the number of street teams that we have, it would be most effective to send people to stations near John Jay, NYU, and Baruch. A full ranked list allows the organization to choose their own cutoff for outreach targets based on their resources.
 
