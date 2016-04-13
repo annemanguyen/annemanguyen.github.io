@@ -4,7 +4,7 @@ title: "Turnstylin' and Profilin' II: Data"
 date: 2015-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
-excerpt: "Cleaning the data: MTA data is a set of weekly tables. Entries and exits are given as running totals for each turnstile in a station at 4-hour intervals. (For the most part; see below.)"
+excerpt: "Cleaning the data: MTA data is a messy set of running entry and exit counts per turnstile per four-hour interval (mostly)."
 ---
 
 #### Cleaning the data
@@ -166,5 +166,5 @@ Here's a map and a list of day of the highest traffic at each station:
 
 As you can see, there is a pretty sharp drop-off between the fourth busiest station and the fifth, so that might be a natural cutoff point for choosing university station targets.
 
-#### Next: [Analysis](amn34.github.io/turnstylin-3)
+#### Next: [Analysis](/turnstylin-3)
 
