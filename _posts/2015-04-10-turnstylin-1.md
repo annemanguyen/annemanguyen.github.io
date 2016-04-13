@@ -4,7 +4,11 @@ title: "Turnstylin' and Profilin' I: Theory"
 date: 2015-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
+<<<<<<< HEAD
 excerpt: "The problem: A women-in-tech nonprofit wants to improve their outreach strategy."
+=======
+excerpt: "The problem: A nonprofit wants to improve their outreach strategy. Do you have a moment for women in tech?"
+>>>>>>> 5d6122462f04abd428d237cfd106a622a2927250
 ---
 
 #### The problem

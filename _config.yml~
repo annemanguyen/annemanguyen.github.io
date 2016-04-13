@@ -1,7 +1,7 @@
 # General
 name: data science social
 description: data projects, data thoughts
-url: http://amn34.github.io
+url: http://annemanguyen.github.io
 
 markdown: kramdown
 highlighter: rouge
@@ -12,8 +12,10 @@ permalink: /:title
 # Social share and comments.
 disqus-id: 
 mail: anne.ma.nguyen@gmail.com
-github: amn34
-linkedin: annemanguyen 
+github: annemanguyen
+<<<<<<< HEAD
+linkedin: in/annemanguyen 
+>>>>>>> 5d6122462f04abd428d237cfd106a622a2927250
 
 # RSS feed
 rss-feed-limit: 10
