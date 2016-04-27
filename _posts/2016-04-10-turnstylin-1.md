@@ -2,7 +2,7 @@
 layout: post
 title: "Turnstylin' and Profilin' I: Theory"
 date: 2016-04-10 00:00:00
-categories: [Metis, MTA]
+categories: [blog]
 tags: Metis, MTA
 excerpt: "The problem: A nonprofit wants to improve their outreach strategy. Do you have a moment for women in tech?"
 ---

@@ -92,7 +92,9 @@ To reduce the scope of the data collection (mostly driven by concerns about avai
 
 Unfortunately there's a lot of missing data across all fields, especially budget. Not all directors and actors have pages, and not all of those who do have full movie history. Unfortunately, this appears to be somewhat correlated to the success of the movie and prominence of the director/actor (though not always -- Michael J. Fox doesn't have a page, for instance!). 
 
-It's obviously also a product of time: BOM was started in 1999 so there's a significant jump in quantity of data.
+<small>Some notes on actor information: I didn't exclude cameo appearances in the actor totals. The effect of this is unclear, as more successful actors have more of these roles, but the movies didn't necessarily perform well or even better than their main-billed movies. Also, I noticed that animation films didn't have prominent voice actors until more recently in the dataset. It'd be interesting to see if that actually contributes to financial success.</small>
+
+Missingness is probably most obviously also a product of time: BOM was started in 1999 so there's a significant jump in quantity of data.
 
 [!](/assets/completesbyyear.png)
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Turnstylin' and Profilin' III: Analysis"
 date: 2016-04-12 00:00:00
-categories: [Metis, MTA]
+categories: [blog]
 tags: Metis, MTA
 excerpt: "Results, comparisons, and caveats for outreach strategies based on MTA data."
 ---
