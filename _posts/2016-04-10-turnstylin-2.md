@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Turnstylin' and Profilin' II: Data"
-date: 2015-04-10 00:00:00
+date: 2016-04-10 00:00:00
 categories: [Metis, MTA]
 tags: Metis, MTA
 excerpt: "MTA data is a messy set of running entry and exit counts per turnstile per four-hour interval (mostly)."
