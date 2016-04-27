@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bias v. variance in theoretical analysis"
+title: "Bias v. Variance and Other Tradeoffs"
 date: 2016-04-22 00:00:00
 categories: [blog]
 tags: Metis, thoughts

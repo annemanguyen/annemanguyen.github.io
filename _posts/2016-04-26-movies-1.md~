@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Like <s>Dylan</s> Prince in the Movies I: Theory"
+title: "Like <s>Dylan</s> Prince in the Movies I: Theory & Data"
 date: 2016-04-25 00:00:00
 categories: [blog]
 tags: Metis, movies
-excerpt: "Is movie opening performance affected by what else is in theaters at the time of release?"
+excerpt: "Is movie opening performance affected by other movies in theaters at the time of release?"
 ---
 
 #### The problem
@@ -90,7 +90,7 @@ All of my data was taken from [boxofficemojo.com](http://boxofficemojo.com), to 
 
 To reduce the scope of the data collection (mostly driven by concerns about availability), I started with all movies from the 'Big Six' major studios from 1980. There are some issues with this approach, namely that 'major studio' designation changes over time, and that some non-major studios actually put out more movies per year than majors. Lions Gate in particular has nearly the same market share as Paramount. The idea is that major movies will dominate the perception of what movies are available at a given time, and that they are more direct competitors with each other than limited-run independent movies. If, however, release is correlated with studio type, genre diversity will be underrepresented in this sample.
 
-Unfortunately there's a lot of missing data across all fields, especially budget. Not all directors and actors have pages, and not all of those who do have full movie history. Unfortunately, this appears to be somewhat correlated to the success of the movie and prominence of the director/actor (though not always -- Michael J. Fox doesn't have a page, for instance!). 
+Unfortunately there's a lot of missing data across all fields, especially budget. Not all directors and actors have pages, and not all of those who do have full movie history. This is problematic because again, missingness appears to be somewhat correlated to the success of the movie and prominence of the director/actor (though not always -- Michael J. Fox doesn't have a page, for instance!). 
 
 <small>Some notes on actor information: I didn't exclude cameo appearances in the actor totals. The effect of this is unclear, as more successful actors have more of these roles, but the movies didn't necessarily perform well or even better than their main-billed movies. Also, I noticed that animation films didn't have prominent voice actors until more recently in the dataset. It'd be interesting to see if that actually contributes to financial success.</small>
 
