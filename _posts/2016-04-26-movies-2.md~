@@ -1,0 +1,110 @@
+---
+layout: post
+title: "Like ~~Dylan~~ Prince in the Movies II: Regression"
+date: 2016-04-26 00:00:00
+categories: [blog]
+tags: Metis, movies
+excerpt: "Regression analysis for fun and unprofit!"
+---
+
+Okay, so this post is just to show how I *would* proceed if I had complete data, but these results are not at all interpretable! Due to the NMAR data problem, we wouldn't necessarily see coefficients of similar magnitude, direction, or significance in the full data set as I present here.
+
+Anyway, here are a couple colorful things that show genre breakdown (into ten, five, and two categories) over time.
+
+![genre10](/assets/10genre.png)
+![genre5](/assets/5genre.png)
+![genre2](/assets/2genre.png)
+
+Everything looks fairly stable over time; the last five years or so appear to have more non-comedies than comedies, which I suspect is driving some of the regression results below.
+
+This is what average opening weekend grosses per genre per year look like:
+
+![genre10owg](/assets/genreowg.png)
+![genre2owg](/assets/genre2owg.png)
+
+Obviously lots of outliers; the comedy/drama split looks like they trend together, with non-comedies generally doing better. However, this could be an artifact of the way that these categories were defined.
+
+Here are all of the opening weekend grosses, though:
+![owgbyyear](/assets/owgbyyear.png)
+
+Again, I think this is largely an artifact of the data collecting process by which some movies got full information and some didn't on BOM. Increasingly more high-grossing outliers in the last ten years or so (keep in mind that opening weekend gross is already adjusted for inflation).
+
+### Some regression
+
+**EVERYTHING HERE IS ONLY FOR THE SET OF MOVIES WITH COMPLETE DATA**
+
+I tried out a few intervals for calculating the ratio of movies in the same genre for a given film:
+- one month prior and one month post, which would include movies that are already out when the film is released and movies that come out while it is still in theaters(assuming an average six-week lifespan)
+- one month prior, in case people don't anticipate and only care about what is already out at the time the film is released (more likely, I think)
+- three months prior and post, which I think is not very realistic
+
+It turns out that results are almost exactly the same for all of these, so I just present some regression results for the one-month prior/post case.
+
+The base case, `opening weekend = budget + director + actor + summer`, captures about 25% of the variation in opening weekend grosses. Not very good, but unsurprising given the complexity of the actual movie-going process versus this model. In this model all variables are significant and positive, with the budget having the largest impact. 
+
+When I add the five-genre ratio, adjusted R-squared increases by a mear 0.02. The genre ratio has a significant negative coefficient, suggesting that contrasting (in terms of genre) with concurrent movies is better. (Remember, the higher the genre ratio, the more similar films there are.) Everything else stays positive. Same thing, more or less, for the ten-genre and two-genre ratios.
+
+Overall, we see that adding genre variables does not improve the model.
+
+Let's look at comedies and dramas separately. Using the two-genre ratio, the comedy ratio is even worse with an adjusted R-squared of 0.19. Budget and director have approximately equal positive effects, but actors are no longer important to the moviegoer, apparently, while movies still do slightly worse on opening weekend if there are a lot of comedies already in theaters or coming out soon.
+
+Dramas, though, are apparently better explained with this model, which captures 36% of the variation in opening weekend gross. For these films, though, actors matter again but director history doesn't. Summer has more of a positive effect (which would make sense as summer action blockbusters fall under the drama, i.e. non-comedy, category in this genre split). Dramas and comedies have the same small penalty for genre similarity at time of release.
+
+Look at these terrible residuals! 
+
+![dramaresids](/assets/dramaresids.png)
+
+---
+
+Anyway, I wanted to try out some regularization, so I stuck all of the variables (budget, director, actor, summer, 10-genre ratio, 5-genre ratio, 2-genre ratio, recession, and recession dummy) into cross-validated Lasso and Ridge models. (Originally I had also included the genre ratios at different time cuts but I just got super huge and unstable coefficients due to high multicollinearity.)
+
+The Lasso model chose an alpha of 0.0003, and all the coefficients on all the variables are quite small. According to this, the best model would simply include budget, director, and actor, which is pretty much what we saw in the previous regressions. This very simple model has an adjusted R-squared of 0.23, so basically none of the additional variables improved the fit significantly. Budget and director are signficant and positive (with budget having the largest effect by far, once again), but actor falls just short.
+
+The Ridge model chooses the same variables and returns an R-squared score of 0.26, which is about what we saw.
+
+### Back to hemlines
+
+Okay, so I threw in a proxy for the economy in the form of [James D. Hamilton's GDP-Based Recession Indicator](https://www.frbatlanta.org/cqer/research/gdpbased_RII.aspx). This is a pretty cool quarterly statistic that maps well to NBER recession dates, among other things. 
+
+First, I looked at whether being more or less recession-y at the time of the movie release had an effect on its opening weekend, both as the percentage variable and as a recession dummy (where over .50 indicates more recession-like economic conditions than less). These don't improve the fit of our two-genre model and turn out to be statistically insignificant. This could easily be due to the weakness of the model.
+
+(There are also better ways to do this, such as taking an average of recession index values for some prior period, or a count of how many quarters the recession conditions had persisted, in case a recessionary mindset on the part of moviegoers is a more cumulative effect. Actually, the dummy postdicts recession conditions for the *previous* quarter so really it should be lagged once and split at .66 instead of .50, per the documentation.)
+
+Interestingly, adding the recession dummy variable to the dramas-only model makes the fit slightly worse, with director and summer going away as significant variables (so much for the summer blockbuster theory). The recession index isn't significant in any of these models.
+
+Anyway, generally you can see that the recession index and opening weekend gross don't go together:
+
+![recowg](/assets/recowg.png)
+
+Again, though, any cyclical nature of movie performance is hidden by this more-complete/more-successful over time pattern in the collected data.
+
+Linear regression shows the same; for the base model plus recession dummy, `opening = budget + director + actor + summer + recession`, we capture about 27% of the variation in opening weekend gross. Everything stays significant though recession is not.
+
+---
+
+So, if you remember, the original question was whether or not the actual set of available movie options response to the economy, by either favoring or disfavoring comedic/lighthearted movies in the mix. This sort of casual (i.e. non-peer reviewed) [paper](http://repub.eur.nl/pub/20147/EI%202010-40.pdf) finds that the proportion of recession months in a year leads shifts in fashionable hem length by about three years.
+
+Here I just do a quick pair-wise regression of the ratio of comedies to dramas in a year on recession percentage of the year (derived from counting the number of quarters with a Hamilton recession index of over 0.50). 
+
+I read that movies tend to take about a year and a half between greenlighting to release, so I test for lagged effects from recession years 1, 2, and 3 years prior to the movie release. One thing to be concerned about is the flexibility of that time frame, with movies rushed to production to take advantage of a particular trend or fad. Movie studios respond to each other, so movie making choices are obviously not independent. 
+
+![recratio](/assets/recessionratio.png)
+
+This is a silly little graph that shows the ratio of comedies in a given year and the percentage of recession quarters in that year. (Everything is normalized.) Not too much of a visual pattern here, and checking pairwise correlations shows that none of the recession indicators are significant. 
+
+It's hard to see what a relationship, if I had found one, might be suggesting, anyway. Either moviemakers are people too~ and they are guided in their decisions about what movies to make by the same emotional process that moviegoers use in their decisions about what movies to see, or they anticipate moviegoers' moods and therefore preferences based on economic conditions. Alternatively, you know, it could be a mix, wherein one studio makes a movie that does really well because it's the right genre for the economic climate (keeping in mind that we don't even know what that is, and that it could be different each time) and then other studios follow suit.
+
+### Next/re-steps
+
+Okay, so obviously the first thing to do is to actually get all the missing data.
+Yup.
+
+This is essentially the way I would go about starting to test the hemlines/lipsticks theories. Again, the results are not actually interpretable!
+
+As far as modeling, I would do a more thorough job of recoding genre/genre windows/recession indicator in different ways, both to test robustness and to find any timeframes that actually have some predictive power.
+
+Genre is a very rough proxy and it would be better to classify movies by tone. Instead of ratio of comedies to dramas, we could then look at average 'lightness'/'darkness' over time. 
+
+Further, while actual recession matters less than *perception* of recession, so there some sentiment data could provide a more direct measure of consumer mindset. It might be interesting to compare movie performance with the so-called 'popcorn index', but in any case, I'd further specify the hemline model. The hemlines paper uses a logged trend variable to capture non-linearity and an autocorrelation variable, which are some things worth thinking about. I don't think a given year's movie mix is related to the previous movie's mix except in the sense that they both could be informed (theoretically) by r
+
+But first: data!

@@ -7,7 +7,7 @@ tags: Metis, MTA
 excerpt: "MTA data is a messy set of running entry and exit counts per turnstile per four-hour interval (mostly)."
 ---
 
-#### Cleaning the data
+### Cleaning the data
 
 The basics: MTA data (available [here](http://web.mta.info/developers/turnstile.html)) is a set of weekly tables. Entries and exits are given as running totals for each turnstile in a station at 4-hour intervals. (For the most part; see below.)
 
@@ -40,11 +40,11 @@ As frustrated data scientists all over the internet will attest, this somewhat c
 
 It could be problematic to simply recode the interval times, so I would suggest grouping them such that both 08:00-12:00 and 07:00-11:00 are AM entrances, etc. Of course this gets tricky with an interval like 10:00-02:00 - is that morning or afternoon? Obviously, outliers and obvious errors should be dropped. Make sure to differentiate between stations with the same name!
 
-#### Selecting data
+### Selecting data
 
 We assume that this nonprofit's annual gala is in the beginning of June of each year. As such, given limited resources, we recommend outreach efforts occur in the six-week leadup, mid-April through May, to the event. Looking at last year's data for this period gives an estimate of station traffic and controls for seasonal effects. Therefore I use the MTA datasets from the week of 4/18/15 to 5/30/15.
 
-##### Selecting universities
+#### Selecting universities
 
 I specifically looked at entry/exit numbers for stations near universities (as in the last post, we select this category based on the assumption that people who use stations near universities are affiliated with them, and that they may be more interested in women-in-tech issues [due to increased likelihood of being in tech? or specifically being a woman in tech? or specifically being a woman thinking about going into a tech career?]).
 
@@ -65,7 +65,7 @@ We can already see that there's overlap between university stations and transit 
 
 We should also note that several of these stations (as well as other selected stations in the analysis) do double-duty: they fall within a 0.3 mile radius of universities that were too small to make the cut. Cooper Union, for example, is right next to NYU and uses the same subway stations. I haven't tried to differentiate them, but they are good to keep in mind as an added benefit for certain stations.
 
-##### Selecting tech hubs
+#### Selecting tech hubs
 
 Defining tech hubs is a bit fuzzier. Looking at startup density maps like the one found at (https://digital.nyc/map) doesn't show a clear visual pattern. Instead, I used conventional wisdom/real estate definitions as propagated in the media, both official (e.g. Mayor's Office materials) and unofficial (newsmedia). These commonly refer to two NYC areas, Silicon Alley, around the Flatiron Building in Manhattan, and the Brooklyn Tech Triangle, in DUMBO. I selected stations that fell within these boundaries.
 
@@ -95,7 +95,7 @@ Here are the lists:
 | NEVINS ST
 | YORK ST
 
-#### Processing the data
+### Processing the data
 
 Due to computing limitations, I processed each station separately, having compiled all entries for a particular station from each week's data. (This is a really simple process of appending each entry that matches the station name and sometimes station line to a master station file.) Here's the code for generating daily station entry/exit totals for W 4th St:
 
@@ -150,7 +150,7 @@ weekday_averages.to_csv('univweekdayavg.csv', header=False,  mode='a')
 
 Looking at the data, outliers were either negative or at least an order of magnitude larger than other figures, so I dropped any interval count (again, that would be, for example, 3500 entries between 12:00 and 16:00 at 59th St on 3/26/16) less than zero and for which the difference between the observation and the median number of daily entries for that station was greater than 150k (an arbitrary but effective threshold). In retrospect, I should have dropped the outliers at the individual turnstile/time level, but I didn't do so until I had summed all turnstiles per station per day, meaning that I dropped observations for whole station-days that were only problematic in a few time turnstile readings.
 
-##### University findings
+#### University findings
 
 Again, the strategy for this nonprofit assumes that all stations near universities should be targeted due to the higher proportion of people in our demographic of interest using them. (This, of course, assumes that that likelihood is constant across university/station locations, which is probably not true.) Therefore, within the set of university stations, we want to find which stations have the highest traffic (measured by total entries and exits), and when that traffic passes through. 
 
@@ -166,5 +166,5 @@ Here's a map and a list of day of the highest traffic at each station:
 
 As you can see, there is a pretty sharp drop-off between the fourth busiest station and the fifth, so that might be a natural cutoff point for choosing university station targets.
 
-#### Next: [Analysis](/turnstylin-3)
+### Next: [Analysis](/turnstylin-3)
 
